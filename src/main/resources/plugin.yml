@@ -1,0 +1,6 @@
+name: MobCatcher
+version: '${version}'
+main: me.faun.mobcatcher.MobCatcher
+api-version: 1.17
+authors: [ Faun ]
+description: Allows you to catch mobs to move them from one place to another.
