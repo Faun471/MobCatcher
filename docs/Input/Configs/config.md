@@ -1,5 +1,8 @@
-# config.yml
-On this page, we'll try to explain all there is to explain in the plugin's config.yml.
+Property: PageTitle, config.yml
+Property: Author, Faun
+Property: LastUpdated, 5th June 2022
+Property: Description, On this page, we'll try to explain all there is to explain in the plugin's config.yml.
+Property: Folder, Configs
 
 ## Adding another mob-catcher
 This is the default mob-catcher item:
@@ -50,7 +53,7 @@ mob-catchers:
         uses: 3
         whitelistedEntities:
         - SHEEP
-        -'CHICKEN
+        - CHICKEN
         - COW
         - PIG
 ```
