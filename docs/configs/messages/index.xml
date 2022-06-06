@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>messages.yml on MobCatcher Wiki</title>
+    <link>https://faun471.github.io/MobCatcher/configs/messages/</link>
+    <description>Recent content in messages.yml on MobCatcher Wiki</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://faun471.github.io/MobCatcher/configs/messages/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

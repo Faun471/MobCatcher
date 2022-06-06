@@ -1,0 +1,6 @@
+---
+description: Sidebar before
+title: Sidebar before
+---
+
+{{< button href="https://google.com" >}} go to google {{< /button >}}
