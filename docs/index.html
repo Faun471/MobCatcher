@@ -8,545 +8,525 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <script defer="" src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    
-
-<style type="text/css">
-
-    body {
-        max-width: 100%;
-    }
-
-    *, p, h1, h2, h3, h4, h5, h6 {
-        font-family: 'Roboto', sans-serif;
-    }
-
-    h1, h2, h3, h4, strong {
-        color: var(--text-color) !important;
-    }
-
-    h1, h2, h3 {
-        font-weight: 500 !important;
-    }
-
-    strong {
-        font-weight: 600 !important;
-    }
-
-    h1 {
-        font-size: 3em !important;
-    }
-
-    h2 {
-        font-size: 2.5em !important;
-    }
-
-    h3 {
-        font-size: 1.9em !important;
-    }
-
-    h4 {
-        font-size: 1.5em !important;
-        font-weight: 400 !important;
-    }
-
-    h5 {
-        font-size: 1.1em !important;
-        font-weight: 400 !important;
-    }
-
-    h6 {
-        font-size: 0.9em !important;
-        color: #dcf0ff;
-        font-weight: 300 !important;
-    }
-
-    table {
-        width: auto !important;
-        max-width: 100%;
-        overflow-x: scroll;
-    }
-
-    #flex-parent-container td {
-        horiz-align: center;
-        vertical-align: center;
-        color: #ddeef4;
-        background-color: var(--bkg-color);
-    }
-
-    #flex-parent-container th {
-        color: #cbdfeb;
-        background-color: var(--bkg-color);
-    }
-
-    nav {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-    }
-
-    .nav-parent {
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .menu-list {
-        margin-right: 0px !important;
-    }
-
-    #flex-parent-container {
-        flex-grow: 1;
-        display: flex;
-        flex-direction: column;
-        min-width: 0 !important;
-    }
-
-    #sidenav-root {
-        position: relative;
-        display: flex;
-        flex-direction: row;
-        flex-grow: 1;
-    }
-
-    .content-container {
-        width: 88%;
-        margin: 3em auto 3em auto;
-        flex-grow: 1;
-        display: flex;
-        flex-direction: column;
-    }
-
-    #sidenav {
-        z-index: 10;
-        transition: width 0.3s;
-        top:0;
-        bottom: 0;
-        flex-shrink: 0;
-        overflow: hidden;
-        max-width: 100%;
-        background-color: var(--bkg-color);
-    }
-
-    body {
-        --bkg-color: #131619;
-        --text-color: #cbdfeb;
-        --border-color: #131619;
-    }
-
-    #flex-parent-container {
-        background-color: #1a1e23;
-        color: var(--text-color);
-    }
-
-    #flex-parent-container pre, code {
-        font-family: 'Fira Code', monospace;
-    }
-
-    #flex-parent-container code {
-        background: #1f252c;
-        color: #7ec699;
-    }
-
-    #sidenav-back {
-        position: absolute;
-        width: 100%;
-        top: 0;
-        bottom: 0;
-        display: flex;
-        background-color: var(--bkg-color);
-        opacity: 0;
-        z-index: 9;
-        transition: opacity 0.2s;
-        display: none;
-    }
-
-    #nav-heading {
-        margin-left: 16px;
-        font-size: 20px !important;
-        font-weight: 500;
-    }
-
-    #sidenav-toggle-btn {
-        width: 50px;
-        margin: 5px;
-        display: inline-block;
-    }
-
-    #page-title-parent {
-        display: flex;
-        flex-grow: 1;
-        flex-direction: column;
-        justify-content: center;
-    }
-
-    .navbar {
-        background: var(--bkg-color);
-    }
-
-    aside #sidenav-content * {
-        color: var(--text-color);
-    }
-
-    #sidenav-content a:hover {
-        color: #000;
-    }
-
-    #sidenav-content a:hover > svg {
-        fill: black;
-    }
-
-    #sidenav-toggle-btn {
-        background-color: #131619;
-        color: white;
-        border: none;
-    }
-
-    /* PrismJS 1.28.0
-    https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+clike+javascript+java+yaml&plugins=line-numbers+file-highlight+show-language+highlight-keywords+toolbar+copy-to-clipboard+match-braces+treeview */
-    /**
-     * prism.js tomorrow night eighties for JavaScript, CoffeeScript, CSS and HTML
-     * Based on https://github.com/chriskempson/tomorrow-theme
-     * @author Rose Pritchard
-     */
-    #flex-parent-container code[class*="language-"],
-    pre[class*="language-"] {
-        color: #ccc;
-        background: none;
-        font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-        font-size: 1em;
-        text-align: left;
-        white-space: pre;
-        word-spacing: normal;
-        word-break: normal;
-        word-wrap: normal;
-        line-height: 1.5;
-
-        -moz-tab-size: 4;
-        -o-tab-size: 4;
-        tab-size: 4;
-
-        -webkit-hyphens: none;
-        -moz-hyphens: none;
-        -ms-hyphens: none;
-        hyphens: none;
-
-    }
-
-    /* Code blocks */
-    #flex-parent-container pre[class*="language-"] {
-        padding: 1em;
-        margin: .5em 0;
-        overflow: auto;
-    }
-
-    #flex-parent-container :not(pre) > code[class*="language-"],
-    pre[class*="language-"] {
-        background: #1f252c;
-    }
-
-    /* Inline code */
-    #flex-parent-container :not(pre) > code[class*="language-"] {
-        padding: .1em;
-        border-radius: .3em;
-        white-space: normal;
-    }
-
-    .token.comment,
-    .token.block-comment,
-    .token.prolog,
-    .token.doctype,
-    .token.cdata {
-        color: #999;
-    }
-
-    .token.punctuation {
-        color: #ccc;
-    }
-
-    .token.tag,
-    .token.attr-name,
-    .token.namespace,
-    .token.deleted {
-        color: #e2777a;
-    }
-
-    .token.function-name {
-        color: #6196cc;
-    }
-
-    .token.boolean,
-    .token.number,
-    .token.function {
-        color: #f08d49;
-    }
-
-    .token.property,
-    .token.class-name,
-    .token.constant,
-    .token.symbol {
-        color: #f8c555;
-    }
-
-    .token.selector,
-    .token.important,
-    .token.atrule,
-    .token.keyword,
-    .token.builtin {
-        color: #cc99cd;
-    }
-
-    .token.string,
-    .token.char,
-    .token.attr-value,
-    .token.regex,
-    .token.variable {
-        color: #7ec699;
-    }
-
-    .token.operator,
-    .token.entity,
-    .token.url {
-        color: #67cdcc;
-    }
-
-    .token.important,
-    .token.bold {
-        font-weight: bold;
-    }
-    .token.italic {
-        font-style: italic;
-    }
-
-    .token.entity {
-        cursor: help;
-    }
-
-    .token.inserted {
-        color: green;
-    }
-
-    #flex-parent-container pre[class*="language-"].line-numbers {
-        position: relative;
-        padding-left: 3.8em;
-        counter-reset: linenumber;
-    }
-
-    #flex-parent-container pre[class*="language-"].line-numbers > code {
-        position: relative;
-        white-space: inherit;
-    }
-
-    #flex-parent-container .line-numbers #flex-parent-container .line-numbers-rows {
-        position: absolute;
-        pointer-events: none;
-        top: 0;
-        font-size: 100%;
-        left: -3.8em;
-        width: 3em; /* works for line-numbers below 1000 lines */
-        letter-spacing: -1px;
-        border-right: 1px solid #999;
-
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-
-    }
-
-    #flex-parent-container .line-numbers-rows > #flex-parent-container span {
-        display: block;
-        counter-increment: linenumber;
-    }
-
-    #flex-parent-container .line-numbers-rows > #flex-parent-container  span:before {
-        content: counter(linenumber);
-        color: #999;
-        display: block;
-        padding-right: 0.8em;
-        text-align: right;
-    }
-
-    div.code-toolbar {
-        position: relative;
-    }
-
-    div.code-toolbar > .toolbar {
-        position: absolute;
-        z-index: 10;
-        top: .3em;
-        right: .2em;
-        transition: opacity 0.3s ease-in-out;
-        opacity: 0;
-    }
-
-    div.code-toolbar:hover > .toolbar {
-        opacity: 1;
-    }
-
-    /* Separate line b/c rules are thrown out if selector is invalid.
-       IE11 and old Edge versions don't support :focus-within. */
-    div.code-toolbar:focus-within > .toolbar {
-        opacity: 1;
-    }
-
-    div.code-toolbar > .toolbar > .toolbar-item {
-        display: inline-block;
-    }
-
-    div.code-toolbar > .toolbar > .toolbar-item > a {
-        cursor: pointer;
-    }
-
-    div.code-toolbar > .toolbar > .toolbar-item > button {
-        background: none;
-        border: 0;
-        color: inherit;
-        font: inherit;
-        line-height: normal;
-        overflow: visible;
-        padding: 0;
-        -webkit-user-select: none; /* for button */
-        -moz-user-select: none;
-        -ms-user-select: none;
-    }
-
-    div.code-toolbar > .toolbar > .toolbar-item > a,
-    div.code-toolbar > .toolbar > .toolbar-item > button,
-    div.code-toolbar > .toolbar > .toolbar-item > span {
-        color: #bbb;
-        font-size: .8em;
-        padding: 0 .5em;
-        background: #f5f2f0;
-        background: rgba(224, 224, 224, 0.2);
-        box-shadow: 0 2px 0 0 rgba(0,0,0,0.2);
-        border-radius: .5em;
-    }
-
-    div.code-toolbar > .toolbar > .toolbar-item > a:hover,
-    div.code-toolbar > .toolbar > .toolbar-item > a:focus,
-    div.code-toolbar > .toolbar > .toolbar-item > button:hover,
-    div.code-toolbar > .toolbar > .toolbar-item > button:focus,
-    div.code-toolbar > .toolbar > .toolbar-item > span:hover,
-    div.code-toolbar > .toolbar > .toolbar-item > span:focus {
-        color: inherit;
-        text-decoration: none;
-    }
-
-    .token.punctuation.brace-hover,
-    .token.punctuation.brace-selected {
-        outline: solid 1px;
-    }
-
-    .rainbow-braces .token.punctuation.brace-level-1,
-    .rainbow-braces .token.punctuation.brace-level-5,
-    .rainbow-braces .token.punctuation.brace-level-9 {
-        color: #E50;
-        opacity: 1;
-    }
-    .rainbow-braces .token.punctuation.brace-level-2,
-    .rainbow-braces .token.punctuation.brace-level-6,
-    .rainbow-braces .token.punctuation.brace-level-10 {
-        color: #0B3;
-        opacity: 1;
-    }
-    .rainbow-braces .token.punctuation.brace-level-3,
-    .rainbow-braces .token.punctuation.brace-level-7,
-    .rainbow-braces .token.punctuation.brace-level-11 {
-        color: #26F;
-        opacity: 1;
-    }
-
-    .rainbow-braces .token.punctuation.brace-level-4,
-    .rainbow-braces .token.punctuation.brace-level-12 {
-        color: #E0E;
-        opacity: 1;
-    }
-</style>
+
+
+    <style type="text/css">
+
+        body {
+            max-width: 100%;
+        }
+
+        *, p, h1, h2, h3, h4, h5, h6 {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        h1, h2, h3, h4, strong {
+            color: var(--text-color) !important;
+        }
+
+        h1, h2, h3 {
+            font-weight: 500 !important;
+        }
+
+        strong {
+            font-weight: 600 !important;
+        }
+
+        h1 {
+            font-size: 3em !important;
+        }
+
+        h2 {
+            font-size: 2.5em !important;
+        }
+
+        h3 {
+            font-size: 1.9em !important;
+        }
+
+        h4 {
+            font-size: 1.5em !important;
+            font-weight: 400 !important;
+        }
+
+        h5 {
+            font-size: 1.1em !important;
+            font-weight: 400 !important;
+        }
+
+        h6 {
+            font-size: 0.9em !important;
+            color: #dcf0ff;
+            font-weight: 300 !important;
+        }
+
+        table {
+            width: auto !important;
+            max-width: 100%;
+            overflow-x: scroll;
+        }
+
+        #flex-parent-container td {
+            horiz-align: center;
+            vertical-align: center;
+            color: #ddeef4;
+            background-color: var(--bkg-color);
+        }
+
+        #flex-parent-container th {
+            color: #cbdfeb;
+            background-color: var(--bkg-color);
+        }
+
+        nav {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        .nav-parent {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .menu-list {
+            margin-right: 0px !important;
+        }
+
+        #flex-parent-container {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            min-width: 0 !important;
+        }
+
+        #sidenav-root {
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            flex-grow: 1;
+        }
+
+        .content-container {
+            width: 88%;
+            margin: 3em auto 3em auto;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #sidenav {
+            z-index: 10;
+            transition: width 0.3s;
+            top:0;
+            bottom: 0;
+            flex-shrink: 0;
+            overflow: hidden;
+            max-width: 100%;
+            background-color: var(--bkg-color);
+        }
+
+        body {
+            --bkg-color: #131619;
+            --text-color: #cbdfeb;
+            --border-color: #131619;
+        }
+
+        #flex-parent-container {
+            background-color: #1a1e23;
+            color: var(--text-color);
+        }
+
+        #flex-parent-container pre, code {
+            font-family: 'Fira Code', monospace;
+        }
+
+        #flex-parent-container code {
+            background: #1f252c;
+            color: #7ec699;
+        }
+
+        #sidenav-back {
+            position: absolute;
+            width: 100%;
+            top: 0;
+            bottom: 0;
+            display: flex;
+            background-color: var(--bkg-color);
+            opacity: 0;
+            z-index: 9;
+            transition: opacity 0.2s;
+            display: none;
+        }
+
+        #nav-heading {
+            margin-left: 16px;
+            font-size: 20px !important;
+            font-weight: 500;
+        }
+
+        #sidenav-toggle-btn {
+            width: 50px;
+            margin: 5px;
+            display: inline-block;
+        }
+
+        #page-title-parent {
+            display: flex;
+            flex-grow: 1;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .navbar {
+            background: var(--bkg-color);
+        }
+
+        aside #sidenav-content * {
+            color: var(--text-color);
+        }
+
+        #sidenav-content a:hover {
+            color: #000;
+        }
+
+        #sidenav-content a:hover > svg {
+            fill: black;
+        }
+
+        #sidenav-toggle-btn {
+            background-color: #131619;
+            color: white;
+            border: none;
+        }
+
+        /* PrismJS 1.28.0
+        https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+clike+javascript+java+yaml&plugins=line-numbers+file-highlight+show-language+highlight-keywords+toolbar+copy-to-clipboard+match-braces+treeview */
+        /**
+         * prism.js tomorrow night eighties for JavaScript, CoffeeScript, CSS and HTML
+         * Based on https://github.com/chriskempson/tomorrow-theme
+         * @author Rose Pritchard
+         */
+        #flex-parent-container code[class*="language-"],
+        pre[class*="language-"] {
+            color: #ccc;
+            background: none;
+            font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+            font-size: 1em;
+            text-align: left;
+            white-space: pre;
+            word-spacing: normal;
+            word-break: normal;
+            word-wrap: normal;
+            line-height: 1.5;
+
+            -moz-tab-size: 4;
+            -o-tab-size: 4;
+            tab-size: 4;
+
+            -webkit-hyphens: none;
+            -moz-hyphens: none;
+            -ms-hyphens: none;
+            hyphens: none;
+
+        }
+
+        /* Code blocks */
+        #flex-parent-container pre[class*="language-"] {
+            padding: 1em;
+            margin: .5em 0;
+            overflow: auto;
+        }
+
+        #flex-parent-container :not(pre) > code[class*="language-"],
+        pre[class*="language-"] {
+            background: #1f252c;
+        }
+
+        /* Inline code */
+        #flex-parent-container :not(pre) > code[class*="language-"] {
+            padding: .1em;
+            border-radius: .3em;
+            white-space: normal;
+        }
+
+        .token.comment,
+        .token.block-comment,
+        .token.prolog,
+        .token.doctype,
+        .token.cdata {
+            color: #999;
+        }
+
+        .token.punctuation {
+            color: #ccc;
+        }
+
+        .token.tag,
+        .token.attr-name,
+        .token.namespace,
+        .token.deleted {
+            color: #e2777a;
+        }
+
+        .token.function-name {
+            color: #6196cc;
+        }
+
+        .token.boolean,
+        .token.number,
+        .token.function {
+            color: #f08d49;
+        }
+
+        .token.property,
+        .token.class-name,
+        .token.constant,
+        .token.symbol {
+            color: #f8c555;
+        }
+
+        .token.selector,
+        .token.important,
+        .token.atrule,
+        .token.keyword,
+        .token.builtin {
+            color: #cc99cd;
+        }
+
+        .token.string,
+        .token.char,
+        .token.attr-value,
+        .token.regex,
+        .token.variable {
+            color: #7ec699;
+        }
+
+        .token.operator,
+        .token.entity,
+        .token.url {
+            color: #67cdcc;
+        }
+
+        .token.important,
+        .token.bold {
+            font-weight: bold;
+        }
+        .token.italic {
+            font-style: italic;
+        }
+
+        .token.entity {
+            cursor: help;
+        }
+
+        .token.inserted {
+            color: green;
+        }
+
+        #flex-parent-container pre[class*="language-"].line-numbers {
+            position: relative;
+            padding-left: 3.8em;
+            counter-reset: linenumber;
+        }
+
+        #flex-parent-container pre[class*="language-"].line-numbers > code {
+            position: relative;
+            white-space: inherit;
+        }
+
+        #flex-parent-container .line-numbers #flex-parent-container .line-numbers-rows {
+            position: absolute;
+            pointer-events: none;
+            top: 0;
+            font-size: 100%;
+            left: -3.8em;
+            width: 3em; /* works for line-numbers below 1000 lines */
+            letter-spacing: -1px;
+            border-right: 1px solid #999;
+
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+
+        }
+
+        #flex-parent-container .line-numbers-rows > #flex-parent-container span {
+            display: block;
+            counter-increment: linenumber;
+        }
+
+        #flex-parent-container .line-numbers-rows > #flex-parent-container  span:before {
+            content: counter(linenumber);
+            color: #999;
+            display: block;
+            padding-right: 0.8em;
+            text-align: right;
+        }
+
+        div.code-toolbar {
+            position: relative;
+        }
+
+        div.code-toolbar > .toolbar {
+            position: absolute;
+            z-index: 10;
+            top: .3em;
+            right: .2em;
+            transition: opacity 0.3s ease-in-out;
+            opacity: 0;
+        }
+
+        div.code-toolbar:hover > .toolbar {
+            opacity: 1;
+        }
+
+        /* Separate line b/c rules are thrown out if selector is invalid.
+           IE11 and old Edge versions don't support :focus-within. */
+        div.code-toolbar:focus-within > .toolbar {
+            opacity: 1;
+        }
+
+        div.code-toolbar > .toolbar > .toolbar-item {
+            display: inline-block;
+        }
+
+        div.code-toolbar > .toolbar > .toolbar-item > a {
+            cursor: pointer;
+        }
+
+        div.code-toolbar > .toolbar > .toolbar-item > button {
+            background: none;
+            border: 0;
+            color: inherit;
+            font: inherit;
+            line-height: normal;
+            overflow: visible;
+            padding: 0;
+            -webkit-user-select: none; /* for button */
+            -moz-user-select: none;
+            -ms-user-select: none;
+        }
+
+        div.code-toolbar > .toolbar > .toolbar-item > a,
+        div.code-toolbar > .toolbar > .toolbar-item > button,
+        div.code-toolbar > .toolbar > .toolbar-item > span {
+            color: #bbb;
+            font-size: .8em;
+            padding: 0 .5em;
+            background: #f5f2f0;
+            background: rgba(224, 224, 224, 0.2);
+            box-shadow: 0 2px 0 0 rgba(0,0,0,0.2);
+            border-radius: .5em;
+        }
+
+        div.code-toolbar > .toolbar > .toolbar-item > a:hover,
+        div.code-toolbar > .toolbar > .toolbar-item > a:focus,
+        div.code-toolbar > .toolbar > .toolbar-item > button:hover,
+        div.code-toolbar > .toolbar > .toolbar-item > button:focus,
+        div.code-toolbar > .toolbar > .toolbar-item > span:hover,
+        div.code-toolbar > .toolbar > .toolbar-item > span:focus {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .token.punctuation.brace-hover,
+        .token.punctuation.brace-selected {
+            outline: solid 1px;
+        }
+
+        .rainbow-braces .token.punctuation.brace-level-1,
+        .rainbow-braces .token.punctuation.brace-level-5,
+        .rainbow-braces .token.punctuation.brace-level-9 {
+            color: #E50;
+            opacity: 1;
+        }
+        .rainbow-braces .token.punctuation.brace-level-2,
+        .rainbow-braces .token.punctuation.brace-level-6,
+        .rainbow-braces .token.punctuation.brace-level-10 {
+            color: #0B3;
+            opacity: 1;
+        }
+        .rainbow-braces .token.punctuation.brace-level-3,
+        .rainbow-braces .token.punctuation.brace-level-7,
+        .rainbow-braces .token.punctuation.brace-level-11 {
+            color: #26F;
+            opacity: 1;
+        }
+
+        .rainbow-braces .token.punctuation.brace-level-4,
+        .rainbow-braces .token.punctuation.brace-level-12 {
+            color: #E0E;
+            opacity: 1;
+        }
+    </style>
 </head>
 <body>
 <div class="nav-parent">
-    
 
 
-<nav class="navbar has-shadow" role="navigation" aria-label="main navigation">
-    <button id="sidenav-toggle-btn" class="button" onclick="ShowHideSidenav()">
-        <i class="fas fa-bars"></i>
-    </button>
-    <div style="display: flex; flex-grow: 1; flex-direction: column; justify-content: center;">
-        <a href="../index.html">
-            <h1 id="nav-heading">MobCatchers Wiki</h1>
-        </a>
 
-    </div>
-</nav>
-    
+    <nav class="navbar has-shadow" role="navigation" aria-label="main navigation">
+        <button id="sidenav-toggle-btn" class="button" onclick="ShowHideSidenav()">
+            <i class="fas fa-bars"></i>
+        </button>
+        <div style="display: flex; flex-grow: 1; flex-direction: column; justify-content: center;">
+            <a href="index.html">
+                <h1 id="nav-heading">MobCatchers Wiki</h1>
+            </a>
 
-
-<div id="sidenav-root">
-    <aside id="sidenav" class="menu">
-        <div id="sidenav-content" style="padding: 10px; margin-bottom: 30px;">
-            <p class="menu-label">
-                Pages
-            </p>
-            <ul class="menu-list">
-                
-                        
-                        
-                            <li><a id="folder-1-Configs"><i id="folder-downar-1-Configs" class="fas fa-caret-down" style="margin-right: 6px;"></i><i id="folder-upar-1-Configs" class="fas fa-caret-up" style="margin-right: 6px;"></i>Configs</a></li>
-                        
-                        <li id="folder-content-1-Configs" style="overflow: hidden; -ms-transition: height .25s; -o-transition: height .25s; -webkit-transition: height .25s; transition: height .25s; overflow: hidden;">
-                            <ul class="menu-list">
-                                
-                        
-                        
-                            <li><a href=".///Configs/config.html">config.yml</a></li>
-                        
-                    
-                            </ul>
-                        </li>
-                    
-                        
-                            <li><a class="is-active" href="/index.html">Home</a></li>
-                        
-                        
-                    
-            </ul>
         </div>
-    </aside>
-    <div id="sidenav-back"></div>
-    <div id="flex-parent-container">
-        <div class="content-container">
-            
-        
+    </nav>
 
 
 
+    <div id="sidenav-root">
+        <aside id="sidenav" class="menu">
+            <div id="sidenav-content" style="padding: 10px; margin-bottom: 30px;">
+                <p class="menu-label">
+                    Pages
+                </p>
+                <ul class="menu-list">
 
 
-<h1>Home</h1>
-<h5>On this page&#44; we'll try to explain all there is to explain in the plugin's config.yml.</h5>
 
-<h6 style="padding-left: 4px;">Author: Faun &nbsp;&nbsp; - &nbsp;&nbsp; Updated: 5th June 2022</h6>
-<div style="margin-top: 40px; margin-bottom: 48px; flex-grow: 1; display: flex; flex-direction: column;" id="test">
-    <div class="content">
-        
-            <h3 id="about-project">About project</h3>
-<p>This is a plugin that allows you to &quot;catch&quot; mobs (much like pokemons) to move them from one place to another.</p>
-<h3 id="getting-started">Getting started</h3>
-<p>The plugin does not have any required dependencies. To use this on your server, simply drag and drop the plugin to your server's plugins folder.</p>
-<h3 id="support-or-contact">Support or Contact</h3>
-<p>Feel free to contact me on Discord <code>Faun#6901</code>, but <em>please</em> read the wiki first.</p>
+                    <li><a id="folder-1-Configs"><i id="folder-downar-1-Configs" class="fas fa-caret-down" style="margin-right: 6px;"></i><i id="folder-upar-1-Configs" class="fas fa-caret-up" style="margin-right: 6px;"></i>Configs</a></li>
 
-        
-    </div>
-</div>
+                    <li id="folder-content-1-Configs" style="overflow: hidden; -ms-transition: height .25s; -o-transition: height .25s; -webkit-transition: height .25s; transition: height .25s; overflow: hidden;">
+                        <ul class="menu-list">
+                            <li><a href="Configs/config.html">config.yml</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="is-active" href="index.html">Home</a></li>
+                </ul>
+            </div>
+        </aside>
+        <div id="sidenav-back"></div>
+        <div id="flex-parent-container">
+            <div class="content-container">
+                <h1>Home</h1>
+                <h6 style="padding-left: 4px;">Author: Faun &nbsp;&nbsp; - &nbsp;&nbsp; Updated: 5th June 2022</h6>
+                <div style="margin-top: 40px; margin-bottom: 48px; flex-grow: 1; display: flex; flex-direction: column;" id="test">
+                    <div class="content">
+                        <h3 id="about-project">About project</h3>
+                        <p>This is a plugin that allows you to &quot;catch&quot; mobs (much like pokemons) to move them from one place to another.</p>
+                        <h3 id="getting-started">Getting started</h3>
+                        <p>The plugin does not have any required dependencies. To use this on your server, simply drag and drop the plugin to your server's plugins folder.</p>
+                        <h3 id="support-or-contact">Support or Contact</h3>
+                        <p>Feel free to contact me on Discord <code>Faun#6901</code>, but <em>please</em> read the wiki first.</p>
 
-    
+
+                    </div>
+                </div>
+
+
+            </div>
         </div>
     </div>
-</div>
 </div>
 
 
@@ -3964,36 +3944,36 @@
 </script>
 
 
-        <script type="text/javascript">
-            // Add onclick event to folder dropdown header to call the toggleDropDown function with the correct ids.
-            var colHeader = document.getElementById('folder-1-Configs');
-            colHeader.onclick = () => toggleDropDown('folder-content-1-Configs', "folder-upar-1-Configs", "folder-downar-1-Configs");
-            var colContent = document.getElementById('folder-content-1-Configs');
+<script type="text/javascript">
+    // Add onclick event to folder dropdown header to call the toggleDropDown function with the correct ids.
+    var colHeader = document.getElementById('folder-1-Configs');
+    colHeader.onclick = () => toggleDropDown('folder-content-1-Configs', "folder-upar-1-Configs", "folder-downar-1-Configs");
+    var colContent = document.getElementById('folder-content-1-Configs');
 
-            // Expand the folder to start with if it is a parent (ancestor) of the open page
-            if (colHeader.classList.contains("is-this-sidenav-folder")) {
-                sidenavFolderExpandedContent['folder-content-1-Configs', true];
-                document.getElementById("folder-upar-1-Configs").style.display = "inline-block";
-                document.getElementById("folder-downar-1-Configs").style.display = "none";
-            } else {
-                sidenavFolderExpandedContent['folder-content-1-Configs', false];
-                document.getElementById("folder-upar-1-Configs").style.display = "none";
-                document.getElementById("folder-downar-1-Configs").style.display = "inline-block";
-                colContent.style.height = "0px";
-            }
+    // Expand the folder to start with if it is a parent (ancestor) of the open page
+    if (colHeader.classList.contains("is-this-sidenav-folder")) {
+        sidenavFolderExpandedContent['folder-content-1-Configs', true];
+        document.getElementById("folder-upar-1-Configs").style.display = "inline-block";
+        document.getElementById("folder-downar-1-Configs").style.display = "none";
+    } else {
+        sidenavFolderExpandedContent['folder-content-1-Configs', false];
+        document.getElementById("folder-upar-1-Configs").style.display = "none";
+        document.getElementById("folder-downar-1-Configs").style.display = "inline-block";
+        colContent.style.height = "0px";
+    }
 
-            // When a dropdown has been expanded and the animation completed, set height of the content to "auto"
-            //   because if the height remains a fixed pixel value,
-            //     then opening sub dropdowns (within this dropdown) won't increase the height of the parent element correctly
-            colContent.addEventListener('transitionend', () => {
-                if (sidenavFolderExpandedContent['folder-content-1-Configs'] == true) {
-                    document.getElementById('folder-content-1-Configs').style.height = "auto";
-                }
-            });
-        </script>
-        
-        
-    
+    // When a dropdown has been expanded and the animation completed, set height of the content to "auto"
+    //   because if the height remains a fixed pixel value,
+    //     then opening sub dropdowns (within this dropdown) won't increase the height of the parent element correctly
+    colContent.addEventListener('transitionend', () => {
+        if (sidenavFolderExpandedContent['folder-content-1-Configs'] == true) {
+            document.getElementById('folder-content-1-Configs').style.height = "auto";
+        }
+    });
+</script>
+
+
+
 </body>
 
 </html>
