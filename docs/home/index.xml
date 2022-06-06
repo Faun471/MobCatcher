@@ -2,9 +2,9 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Overview on MobCatcher Wiki</title>
-    <link>/home/</link>
+    <link>https://faun471.github.io/MobCatcher/home/</link>
     <description>Recent content in Overview on MobCatcher Wiki</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="/home/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="https://faun471.github.io/MobCatcher/home/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
