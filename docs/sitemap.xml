@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>/home/</loc>
+  </url><url>
+    <loc>/commands-and-permissions/</loc>
+  </url><url>
+    <loc>/configs/</loc>
+  </url><url>
+    <loc>/_layout/</loc>
+  </url><url>
+    <loc>/categories/</loc>
+  </url><url>
+    <loc>/configs/config/</loc>
+  </url><url>
+    <loc>/_layout/footer/</loc>
+  </url><url>
+    <loc>/_layout/header/</loc>
+  </url><url>
+    <loc>/home/installation/</loc>
+  </url><url>
+    <loc>/configs/messages/</loc>
+  </url><url>
+    <loc>/</loc>
+  </url><url>
+    <loc>/_layout/article-sidebar-after/</loc>
+  </url><url>
+    <loc>/_layout/sidebar-after/</loc>
+  </url><url>
+    <loc>/_layout/sidebar-before/</loc>
+  </url><url>
+    <loc>/tags/</loc>
+  </url>
+</urlset>

@@ -26,7 +26,6 @@ public class PlayerInteractEntityListener implements Listener {
         Player player = event.getPlayer();
         ItemStack item = player.getEquipment().getItemInMainHand();
         if (!item.hasItemMeta()) {
-            System.out.println("first return");
             return;
         }
 

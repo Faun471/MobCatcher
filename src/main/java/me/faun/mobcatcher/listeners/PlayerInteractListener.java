@@ -47,8 +47,6 @@ public class PlayerInteractListener implements Listener {
         }
 
         MobCatcherItem bean = pdc.get(plugin.getKey(), plugin.getBeanDataType());
-        assert bean != null;
-        System.out.println(bean);
 
         if (bean.getEntityType() == EntityType.UNKNOWN) {
             return;

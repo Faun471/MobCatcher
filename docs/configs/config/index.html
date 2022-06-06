@@ -3,18 +3,17 @@
 <!DOCTYPE html>
 <html>
   <head>
-	<meta name="generator" content="Hugo 0.100.1" />
     <title>
-	MobCatcher Wiki :: MobCatcher Wiki
+	config.yml :: MobCatcher Wiki
 </title>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-06-07T02:30:41 &#43;08">
+<meta name="revised" content="2022-06-07T02:30:42 &#43;08">
 <meta name="description" content="">
 
 
 
-<title>MobCatcher Wiki :: MobCatcher Wiki</title>
+<title>config.yml :: MobCatcher Wiki</title>
 
 <link rel="shortcut icon" href='/images/favicon.png' type="image/x-icon" />
 
@@ -3171,9 +3170,9 @@ article section.page nav.subpages li a {
     
   </head>
 
-  <body data-url="/"
+  <body data-url="/configs/config/"
 
-  class="">
+  class="hidefooter hidenextpage ">
 
 <style type="text/css">
   #debug{
@@ -3210,7 +3209,9 @@ article section.page nav.subpages li a {
     </div>
     
 
-    <div>	
+    <div>
+
+		
 	
 			
 		
@@ -3238,7 +3239,9 @@ article section.page nav.subpages li a {
     <article>
       
       <aside class="">
-        	
+        
+
+		
 	
 			
 		
@@ -3299,14 +3302,15 @@ article section.page nav.subpages li a {
     </li>
     
 
-    <li data-nav-id="/configs/" class="dd-item haschildren
+    <li data-nav-id="/configs/" class="dd-item parent haschildren
         item_level_$level
         ">
 
       
       
       
-      <i class="fas fa-chevron-right ddexp"></i>
+      
+          <i class="fas fa-chevron-down ddexp"></i>
         
       
           <a href="/configs/">📝 Configuration</a>
@@ -3314,7 +3318,7 @@ article section.page nav.subpages li a {
         <ul>
               
 
-    <li data-nav-id="/configs/config/" class="dd-item
+    <li data-nav-id="/configs/config/" class="dd-item active
         item_level_$level
         ">
 
@@ -3348,7 +3352,9 @@ article section.page nav.subpages li a {
 
 
 
-</ul>	
+</ul>
+
+		
 	
 			
 		
@@ -3361,9 +3367,202 @@ article section.page nav.subpages li a {
       <section class="page ">
       
 	
-  	  
-	    <meta http-equiv = "refresh" content = "0; url = /home/"/>
-	  
+		
+    
+    
+    <nav id="ariane" aria-label="breadcrumb">
+      <ol class="ariane">
+        
+  
+  	
+		
+  
+  	
+	<li >
+      <a class="text-link" href="">
+        Home
+      </a>
+    </li>
+	
+  
+    <li class="">
+      <a class="text-link" href="/configs/">
+        Configuration
+      </a>
+    </li>
+	
+  	
+  
+    <li class="active">
+      
+        config.yml
+      
+    </li>
+
+      </ol>
+    </nav>
+    
+    
+
+    
+		
+        
+		
+		
+		
+		
+		
+		
+		
+
+		
+			<h1>config.yml</h1>
+        
+
+		
+										
+		
+
+		
+	
+
+	
+	
+	<div class="jump-to-section">
+		<span onclick="$h = $(this);$h.next('nav').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('nav').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+  			<span class="fas fa-align-right"></span>
+  			Jump to Section
+  			<i style=";" class="fas fa-chevron-right"></i>
+		</span>
+		<nav id="TableOfContents">
+  <ul>
+    <li><a href="#adding-another-mob-catcher">Adding another mob-catcher</a>
+      <ul>
+        <li><a href="#possible-values">Possible values</a></li>
+        <li><a href="#examples">Examples</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+	</div>
+	
+	
+
+
+
+
+
+
+	<div class="content">
+	    <h2 ref="adding-another-mob-catcher" >Adding another mob-catcher</h2><a class="anchor" id="adding-another-mob-catcher"></a>
+<p>This is the default mob-catcher item:</p>
+<pre><code class="language-yaml">mob-catchers:
+    default:
+        material: STICK
+        displayName: Mob Catching Stick!
+        uses: 1
+        whitelistedEntities: 
+        - WOLF
+</code></pre>
+<p>Now, let&rsquo;s delve into detail as to what each of them does and the possible values you can change them to.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">config value</th>
+<th style="text-align:center">possible values</th>
+<th style="text-align:center">description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">default</td>
+<td style="text-align:center">String</td>
+<td style="text-align:center">This is the name of the item and is what shows up when you tab-complete the <code>/mc give &lt;player&gt; &lt;item&gt;</code> command.</td>
+</tr>
+<tr>
+<td style="text-align:center">material</td>
+<td style="text-align:center">Material</td>
+<td style="text-align:center">This is the item that will represent the item. It is advisable to not use a block as an item.</td>
+</tr>
+<tr>
+<td style="text-align:center">displayName</td>
+<td style="text-align:center">String</td>
+<td style="text-align:center">This will serve as the item&rsquo;s display name.</td>
+</tr>
+<tr>
+<td style="text-align:center">uses</td>
+<td style="text-align:center">Integer</td>
+<td style="text-align:center">This will determine how many times the item can be used before getting destroyed. You may put any negative value for infinite uses.</td>
+</tr>
+<tr>
+<td style="text-align:center">whitelistedEntities</td>
+<td style="text-align:center">EntityType</td>
+<td style="text-align:center">This is the list of entities that can be put inside the item. You may put <code>&quot;*&quot;</code> to allow all mobs to get &ldquo;caught&rdquo;.</td>
+</tr>
+</tbody>
+</table>
+<h3 ref="possible-values" >Possible values</h3><a class="anchor" id="possible-values"></a>
+<p><code>String</code> values are any string of text or numbers.</p>
+<p><code>Integer</code> values are any number from -2147483647 to 2147483647.</p>
+<p><code>Material</code> values are Material enum constants. You may refer to this <a href="https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html">page</a>.</p>
+<p><code>EntityType</code> values are EntityType enum constants. You may refer to this <a href="https://hub.spigotmc.org/javadocs/spigot/org/bukkit/entity/EntityType.html">page</a>.</p>
+<br>
+<h3 ref="examples" >Examples</h3><a class="anchor" id="examples"></a>
+<br>
+<center> <h4> A mob-catcher that has unlimited uses and can catch all mobs: </h4> </center>
+<pre><code class="language-yaml">mob-catchers:
+    infinite:
+        material: BLAZE_ROD
+        displayName: '&amp;eThe Ultimate Catcher'
+        uses: -1
+        whitelistedEntities: [ '*' ]
+</code></pre>
+<br>
+<center> <h4> A mob-catcher that has three uses and can catch farm animals: </h4> </center>
+<pre><code class="language-yaml">mob-catchers:
+    farm-animals-catcher:
+        material: STICK
+        displayName: &amp;7Farm Animals Catcher
+        uses: 3
+        whitelistedEntities:
+        - SHEEP
+        - CHICKEN
+        - COW
+        - PIG
+</code></pre>
+<br>
+<center> <h4> All of them in one: </h4> </center>
+<pre><code class="language-yaml">mob-catchers:    
+    default:
+        material: STICK
+        displayName: Mob Catching Stick!
+        uses: 1
+        whitelistedEntities:
+        - WOLF
+    infinite:
+        material: BLAZE_ROD
+        displayName: &amp;eThe Ultimate Catcher
+        uses: -1
+        whitelistedEntities: [ '*' ]
+    farm-animals-catcher:
+        material: STICK
+        displayName: &amp;7Farm Animals Catcher
+        uses: 3
+        whitelistedEntities:
+        - SHEEP
+        - CHICKEN
+        - COW
+        - PIG
+</code></pre>
+
+		</div>
+
+
+
+
+
+
+	
 	
 
       </section>
@@ -3374,20 +3573,55 @@ article section.page nav.subpages li a {
       
 	
 
-      </section>
-      
-    </article>
-    
-    
-    <footer>
-      	
+		
+	
+			
+		
+	    	
+	  	
+	<div class="TableOfContents">
+    <label><i class="fas fa-align-right"></i>&nbsp;&nbsp;What&#39;s on this page</label>
+    <nav>
+        <ul >
+            <li><a href="/configs/config/">config.yml</a></li>
+        </ul>
+    </nav>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#adding-another-mob-catcher">Adding another mob-catcher</a>
+      <ul>
+        <li><a href="#possible-values">Possible values</a></li>
+        <li><a href="#examples">Examples</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div>
+
+		
 	
 			
 		
 	    	
 	    
-	
-    </footer>
+	<div class="Actions">
+	<nav>
+		<ul>
+				
+		    
+		    
+			
+		    
+
+    	</ul>
+	</nav>
+    
+</div>
+
+      </section>
+      
+    </article>
+    
     
 
 
